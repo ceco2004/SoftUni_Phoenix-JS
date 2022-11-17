@@ -50,10 +50,10 @@ function ticTac(mooving){
         let col = Number(element[2]);
        
       
-       isFinish_newMoove =  moove(row, col, player, matrix, isFinish);
+       let isFinish_newMoove =  moove(row, col, player, matrix, isFinish);
        isFinish = isFinish_newMoove[0];
        let newMoov = isFinish_newMoove[1];
-
+       // change player
        if(newMoov === false){
         player = player === "O" ? "X" : "O";
        }
@@ -176,8 +176,6 @@ function checkHolizontals(matrix){
     }
 
    }
-
-
 
     return isFinish;
 }
