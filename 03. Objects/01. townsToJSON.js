@@ -19,7 +19,7 @@ function solve(arr){
             Latitude: Number(row[1]).toFixed(2),
             Longitude: Number(row[2]).toFixed(2)
         }
-            towns.push(town);
+        towns.push(town);
     }
 
     return JSON.stringify(towns);
