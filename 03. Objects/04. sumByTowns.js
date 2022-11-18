@@ -8,6 +8,16 @@ sumByTowns(['Sofia',
 '4']
 );
 
+sumByTowns(['Sofia',
+'20',
+'Varna',
+'3',
+'sofia',
+'5',
+'varna',
+'4']
+);
+
 function sumByTowns(arr){
     const objects = [];
     arr.forEach((e, index, a) => {
