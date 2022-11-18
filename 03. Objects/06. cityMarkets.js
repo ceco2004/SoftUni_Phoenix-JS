@@ -44,5 +44,13 @@ function marketLoad(arr){
         }
     })
 
-   console.log(JSON.stringify(markets))
+    for(let key in markets){
+        console.log(`Town - ${key}`)
+        markets[key].forEach(a =>{
+            for(let k in a){
+                console.log(`$$$ ${k}: ${a[k]}`)
+            }
+            
+        });
+    }
 }
