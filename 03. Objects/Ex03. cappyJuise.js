@@ -17,6 +17,7 @@ function bottle(arr){
     const juise = [];
 
     arr.forEach(line => {
+      
         let data = line.split("=>").map(e => e.trim());
         let fruit = data[0];
         let quantity = Number(data[1]);
@@ -24,49 +25,18 @@ function bottle(arr){
         if(juise.some(e => Object.keys(e).some(r => r === fruit))){
             let obj = juise.filter(e => Boolean(e[fruit]))[0];
             obj[fruit] += quantity;
-          
-            
-            if(obj[fruit] >= 1000){
-                let newBottles = Math.floor(obj[fruit] / 1000);
-                let newFruitQuantity = obj[fruit] % 1000;
 
-                if(bottles.some(e => Object.keys(e).some(r => r === fruit))){
-                    let fruitBottles = bottles.filter(o => Boolean(o[fruit]))[0];
-                    fruitBottles[fruit] += newBottles;
-                    
-                }
-                else{
-                    let newObj = {
-                        [fruit]: newBottles
-                    }
-                    bottles.push(newObj);
-                }
-                obj[fruit] = newFruitQuantity;
-            }
+            checkQuantity(obj, fruit);
+           
         }
         else{
+
             let newObj = {
                 [fruit]: quantity
             }
-
-            if(newObj[fruit] >= 1000){
-                let newBottles = Math.floor(newObj[fruit] / 1000);
-                let newFruitQuantity = newObj[fruit] % 1000;
-               
-                if(bottles.some(e => Object.keys(e).some(r => r === fruit))){
-                    let fruitBottles = bottles.filter(o => Boolean(bottles[fruit]))[0];
-                    fruitBottles[fruit] += newBottles;
-                    
-                }
-                else{
-                    let newObjj = {
-                        [fruit]: newBottles
-                    }
-                    bottles.push(newObjj);
-                }
-                newObj[fruit] = newFruitQuantity;
-
-            }
+            
+            checkQuantity(newObj, fruit);
+            
             juise.push(newObj);
 
         }
@@ -78,6 +48,26 @@ function bottle(arr){
             console.log(`${key} => ${o[key]}`)
         }
     })
+
+    function checkQuantity(newObj, fruit){
+      
+        if(newObj[fruit] >= 1000){
+           
+            let newBottles = Math.floor(newObj[fruit] / 1000);
+            let newFruitQuantity = newObj[fruit] % 1000;
+           
+            if(bottles.some(e => Object.keys(e).some(r => r === fruit))){
+                let fruitBottles = bottles.filter(o => Boolean(o[fruit]))[0];
+                fruitBottles[fruit] += newBottles;
+            }
+            else{
+                let newObjj = {
+                    [fruit]: newBottles
+                }
+                bottles.push(newObjj);
+            }
+            newObj[fruit] = newFruitQuantity;
+        }
+    }
     
-    console.log();
 }
