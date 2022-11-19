@@ -1,4 +1,4 @@
-let arr = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Pellentesque quis hendrerit dui.', 
+let arr = ['Lorem  ipsum ipsum ipsum dolor sit amet, consectetur adipiscing elit.', 'Pellentesque quis hendrerit dui.', 
 'Quisque fringilla est urna, vitae efficitur urna vestibulum fringilla.', 
 'Vestibulum dolor diam, dignissim quis varius non, fermentum non felis.', 
 'Vestibulum ultrices ex massa, sit amet faucibus nunc aliquam ut.', 
@@ -11,14 +11,11 @@ extractUnique(arr);
 function extractUnique(arr){
     const uniqueWords = [];
     arr.forEach(line => {
-        let words = line.split(/[ .,!?]+/gm).map(w => w.toLowerCase())
+        let words = line.split(/[\W]+/gm).map(w => w.toLowerCase())
                     .filter(w => w);
 
         words.forEach(w => {
-            if(uniqueWords.some(wo => wo === w)){
-
-            }
-            else{
+            if(uniqueWords.some(wo => wo === w) === false){
                 uniqueWords.push(w);
             }
         })            
