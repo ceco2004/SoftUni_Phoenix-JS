@@ -16,7 +16,36 @@ function store(arr){
     })
 
     products.sort((a, b) => a.name.localeCompare(b.name));
+    orderSubGroupByPrice(products);
     print(products);
+}
+
+function orderSubGroupByPrice(products){
+    let letter = products[0].name[0];
+    let firstIndex = 0;
+    let length = 0;
+   
+    for(let i = 0; i < products.length; i++){
+        let product = products[i];
+       
+        if(i === products.length - 1 || (i > 0 && product.name[0] !== letter)){
+
+            if(i === products.length - 1){
+                length++;
+            }
+
+            letter = product.name[0];
+            let subArr = products.splice(firstIndex, length);
+            subArr.sort((a, b) => b.price - a.price);
+            subArr.forEach((e, i, arr) => {
+                products.splice(firstIndex + i, 0, arr[i]);
+            });
+
+            firstIndex = i;
+            length = 0;
+        }
+        length++;
+    }
 }
 
 
