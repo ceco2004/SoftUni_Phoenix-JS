@@ -8,7 +8,7 @@ function currencyFormatter(separator, symbol, symbolFirst, value) {
 
 function result(f){
     return function(n){
-        return f(",", "$", true, value = n)
+        return f(",", "$", true, n)
     }
 }
 
