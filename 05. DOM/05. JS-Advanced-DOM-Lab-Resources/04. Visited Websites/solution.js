@@ -6,7 +6,17 @@ function solve() {
 }
 
 function clickedLink(e){
-  let node = e.target.parentNode.nextElementSibling;
+     let pNode = e.target;
+  
+    while(true){
+      if(pNode.hasAttribute("class") && pNode.getAttribute("class") === "link-1"){
+        break;
+      }
+    pNode = pNode.parentNode;
+  }
+
+  let node = pNode.lastElementChild;
+
   let par = node.textContent;
 
   let dataParent = par.split(" ");
