@@ -3,6 +3,10 @@ body{
     margin: auto;
 }
 
+.disable-btn  {
+  background-color: #aaa !important;
+}
+
 .product-image {
     float: left;
     width: 20%;
