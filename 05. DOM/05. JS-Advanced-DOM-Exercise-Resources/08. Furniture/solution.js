@@ -7,7 +7,7 @@ function solve() {
 
 
   function buyProducts(e){
-    let checkedBoxes = Array.from(document.querySelectorAll("input"));
+    let checkedBoxes = Array.from(document.querySelectorAll("input:checked"));
 
     let products = [];
     let totalPrice = 0;
