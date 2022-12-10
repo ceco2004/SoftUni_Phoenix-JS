@@ -36,7 +36,6 @@ function stopwatch() {
     }
 
     function timeToDOM(time){
-        console.log(time)
         document.getElementById("time").textContent = time;
 
     }
