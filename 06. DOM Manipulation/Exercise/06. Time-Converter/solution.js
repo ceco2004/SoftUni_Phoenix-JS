@@ -12,9 +12,13 @@ function attachEventsListeners() {
         let allTime = convertToAll(convertToSeconds(type, value));
         
         btns.forEach(b => {
+            b.previousElementSibling.removeAttribute("style");
             let type = b.previousElementSibling.getAttribute("id");
             let value = allTime[type];
             b.previousElementSibling.value = value;
+            if(b !== this){
+                b.previousElementSibling.setAttribute("style", "background-color: red")
+            }
         })
         
     }
