@@ -1,4 +1,5 @@
-function availableCards(){
+
+const result =(function (){
     let suits = { SPADES: "♠",
                   HEARTS: "♥",
                   DIAMONDS: "♦",
@@ -11,9 +12,7 @@ function availableCards(){
         Suits: suits,
         Card: faces
     }
-}
-
-const result = availableCards();
+})();
 const Cards = result.Card;
 const Suits = result.Suits;
 
@@ -56,6 +55,4 @@ class Card {
 let c = new Card("A", Suits.CLUBS);
 console.log(c.toString());
 c.card = "10";
-console.log(c.toString());
-//c.card = "12"; //Error
 console.log(c.toString());
