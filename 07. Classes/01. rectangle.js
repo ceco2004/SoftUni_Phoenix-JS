@@ -14,3 +14,4 @@ let r1 = new Rectangle(2, 2, "blue");
 let r2 = new Rectangle(23, 17, "red");
 
 console.log(r1.calcArea, r2.calcArea);
+console.log(r1.color, r2.color);
