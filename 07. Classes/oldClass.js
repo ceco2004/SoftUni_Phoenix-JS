@@ -7,7 +7,7 @@ function Rectangle1(w, h){
     function getHeight() {return heigth};
 
     function setWidth(){width = validateSide(arguments[0])};
-    function setHeight(){height = validateSide(arguments[0])};
+    function setHeight(){heigth = validateSide(arguments[0])};
 
    
     function validateSide(value){

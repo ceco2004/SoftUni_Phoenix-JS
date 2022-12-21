@@ -14,16 +14,16 @@ class Teacher extends Person {
 
 function extendPerson (){
    this.getInfo = function (){
-    let info = "";
-    for(let key in this){
-        if(typeof(this[key]) === "function"){
-            continue;
+      let info = "";
+      for(let key in this){
+          if(typeof(this[key]) === "function"){
+              continue;
+          }
+          info += `${key} - ${this[key]}; `;
         }
-        info += `${key} - ${this[key]}; `;
-    }
         return info;
-    }
-    return this;
+   }
+   return this;
 }
 
 let p = new Person("Ivan", 23);
