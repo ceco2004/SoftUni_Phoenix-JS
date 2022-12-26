@@ -1,7 +1,7 @@
 class Animal {
     constructor(name, age, owner){
         if(this.constructor.name === "Animal"){
-            throw TypeError("Animal class cann't be instanced!");
+            throw new MyCustomError("Animal class cann't be instanced!");
         }
         this.name = name;
         this.age = age;
@@ -38,6 +38,12 @@ class Dog extends Animal {
 class Puppy extends Dog {
     constructor(name, age, owner){
         super(name, age, owner);
+    }
+}
+
+class MyCustomError extends Error {
+    constructor(message){
+        super(message);
     }
 }
 

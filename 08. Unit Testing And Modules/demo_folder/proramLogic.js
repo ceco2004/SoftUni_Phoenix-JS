@@ -8,4 +8,10 @@ let puppy = new Puppy("Pufi", 3, "Ceco");
 console.log(dog.speak());
 console.log(puppy.speak());
 
-let animal = new Animal();
+try {
+    let animal = new Animal();
+} catch(err){
+    console.log(err.constructor.name)
+    console.log(err.message);
+}
+
