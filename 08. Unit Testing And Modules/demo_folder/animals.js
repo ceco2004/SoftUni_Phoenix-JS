@@ -1,6 +1,6 @@
 class Animal {
     constructor(name, age, owner){
-        if(this.constructor.name === Animal){
+        if(this.constructor.name === "Animal"){
             throw TypeError("Animal class cann't be instanced!");
         }
         this.name = name;

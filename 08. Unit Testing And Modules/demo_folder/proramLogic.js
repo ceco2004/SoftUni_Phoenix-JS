@@ -7,3 +7,5 @@ let puppy = new Puppy("Pufi", 3, "Ceco");
 
 console.log(dog.speak());
 console.log(puppy.speak());
+
+let animal = new Animal();
